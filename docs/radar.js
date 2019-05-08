@@ -274,6 +274,7 @@ function radar_visualization(config) {
       .attr("transform", translate(title_offset.x, title_offset.y))
       .text(config.title)
       .style("font-family", "Arial, Helvetica")
+      .style("fill", "white")
       .style("font-size", "34");
 
     // footer
@@ -282,6 +283,7 @@ function radar_visualization(config) {
       .text("▲ moved up     ▼ moved down")
       .attr("xml:space", "preserve")
       .style("font-family", "Arial, Helvetica")
+      .style("fill", "white")
       .style("font-size", "10");
 
     // legend
@@ -294,12 +296,14 @@ function radar_visualization(config) {
         ))
         .text(config.quadrants[quadrant].name)
         .style("font-family", "Arial, Helvetica")
+        .style("fill", "white")
         .style("font-size", "18");
       for (var ring = 0; ring < 4; ring++) {
         legend.append("text")
           .attr("transform", legend_transform(quadrant, ring))
           .text(config.rings[ring].name)
           .style("font-family", "Arial, Helvetica")
+          .style("fill", "white")
           .style("font-size", "12")
           .style("font-weight", "bold");
         legend.selectAll(".legend" + quadrant + ring)
@@ -312,6 +316,7 @@ function radar_visualization(config) {
               .text(function(d, i) { return d.id + ". " + d.label; })
               .style("font-family", "Arial, Helvetica")
               .style("font-size", "11")
+              .style("fill", "white")
               .on("mouseover", function(d) { showBubble(d); highlightLegendItem(d); })
               .on("mouseout", function(d) { hideBubble(d); unhighlightLegendItem(d); });
       }
@@ -401,15 +406,15 @@ function radar_visualization(config) {
     // blip shape
     if (d.moved > 0) {
       blip.append("path")
-        .attr("d", "M -11,5 11,5 0,-13 z") // triangle pointing up
+        .attr("d", "M -13,8 13,8 0,-14 z") // triangle pointing up
         .style("fill", d.color);
     } else if (d.moved < 0) {
       blip.append("path")
-        .attr("d", "M -11,-5 11,-5 0,13 z") // triangle pointing down
+        .attr("d", "M -13,-8 13,-8 0,14 z") // triangle pointing down
         .style("fill", d.color);
     } else {
       blip.append("circle")
-        .attr("r", 9)
+        .attr("r", 15)
         .attr("fill", d.color);
     }
 
@@ -418,11 +423,11 @@ function radar_visualization(config) {
       var blip_text = config.print_layout ? d.id : d.label.match(/[a-z]/i);
       blip.append("text")
         .text(blip_text)
-        .attr("y", 3)
+        .attr("y", 5)
         .attr("text-anchor", "middle")
         .style("fill", "#fff")
         .style("font-family", "Arial, Helvetica")
-        .style("font-size", function(d) { return blip_text.length > 2 ? "8" : "9"; })
+        .style("font-size", function(d) { return blip_text.length > 2 ? "11" : "13"; })
         .style("pointer-events", "none")
         .style("user-select", "none");
     }

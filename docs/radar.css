@@ -1,6 +1,8 @@
 body {
   font-family: 'Source Sans Pro', arial, helvetica, sans-serif;
   padding-bottom: 50px;
+  color: white;
+  background-color: black;
 }
 h3 {
   margin-top: 50px;
@@ -16,4 +18,10 @@ td {
   width: 50%;
   vertical-align: top;
   padding-right: 60px;
+
+}
+svg#radar {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
 }
