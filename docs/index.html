@@ -17,36 +17,43 @@
 
 
 <script>
-radar_visualization({
-  svg_id: "radar",
-  width: 1450,
-  height: 1000,
-  colors: {
-    background: "#000",
-    grid: "#bbb",
-    inactive: "#fff"
-  },
-  title: "Company Radar",
-  quadrants: [
-    { name: "Travel" },
-    { name: "Tech" },
-    { name: "Services" },
-    { name: "Other" }
-  ],
-  rings: [
-    { name: "AWESOME", color: "#4bbd9e" },
-    { name: "GOOD", color: "#abc5a7" },
-    { name: "BAD", color: "#e28413" },
-    { name: "HORRIBLE", color: "#be0000" }
-  ],
-  print_layout: true,
-  // zoomed_quadrant: 0,
-  //ENTRIES
-  entries: [
+  radar_visualization({
+    svg_id: "radar",
+    width: 1450,
+    height: 1000,
+    colors: {
+      background: "#000",
+      grid: "#bbb",
+      inactive: "#fff"
+    },
+    title: "Company Radar",
+    quadrants: [
+      { name: "Travel" },
+      { name: "Tech" },
+      { name: "Services" },
+      { name: "Other" }
+    ],
+    rings: [
+      { name: "AWESOME", color: "#4bbd9e" },
+      { name: "GOOD", color: "#abc5a7" },
+      { name: "BAD", color: "#e28413" },
+      { name: "HORRIBLE", color: "#be0000" }
+    ],
+    print_layout: true,
+    // zoomed_quadrant: 0,
+    //ENTRIES
+    entries: [
       {
         quadrant: 2,
         ring: 3,
-        label: "DHL",
+        label: "DHL Paket",
+        active: true,
+        moved: 0
+      },
+      {
+        quadrant: 2,
+        ring: 3,
+        label: "DHL Express",
         active: true,
         moved: 0
       },
@@ -78,8 +85,70 @@ radar_visualization({
         active: true,
         moved: 0
       },
-    
-  ]
+      {
+        quadrant: 1,
+        ring: 0,
+        label: "Github",
+        active: true,
+        moved: 0
+      },
+      {
+        quadrant: 1,
+        ring: 0,
+        label: "Gitlab",
+        active: true,
+        moved: 0,
+      },
+      {
+        quadrant: 3,
+        ring: 1,
+        label: "Nuki Home Solutions",
+        active: true,
+        moved: 0,
+      },
+      {
+        quadrant: 0,
+        ring: 3,
+        label: "Renfe",
+        active: true,
+        moved: 0,
+      },
+      {
+        quadrant: 0,
+        ring: 3,
+        label: "Ryanair",
+        active: true,
+        moved: 0,
+      },
+      {
+        quadrant: 0,
+        ring: 1,
+        label: "Lufthansa",
+        active: true,
+        moved: 0,
+      },
+      {
+        quadrant: 1,
+        ring: 1,
+        label: "Samsung",
+        active: true,
+        moved: 0,
+      },
+      {
+        quadrant: 1,
+        ring: 2,
+        label: "Razer",
+        active: true,
+        moved: 0,
+      },
+      {
+        quadrant: 0,
+        ring: 0,
+        label: "Cicar/Cabrera Medina",
+        active: true,
+        moved: 0,
+      }
+    ]
   //ENTRIES
 });
 </script>
@@ -91,7 +160,7 @@ radar_visualization({
 <h3>What is the company radar?</h3>
 
 <p>
-Some companies worry about their customers and service while others suck. This radar displays our experience with some of the companies we interact reguarly.
+Some companies worry about their customers, products and services while others suck. This radar displays our experience with some of the companies we interact regularly.
 </p>
 </td>
 </tr>
